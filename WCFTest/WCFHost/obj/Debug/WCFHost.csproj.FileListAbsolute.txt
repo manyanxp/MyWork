@@ -1,0 +1,36 @@
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.csprojResolveAssemblyReference.cache
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\MainWindow.baml
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\MainWindow.g.cs
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\App.g.cs
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost_MarkupCompile.cache
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.g.resources
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.Properties.Resources.resources
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\WCFHost.exe
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\WCFHost.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\WcfService.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\WcfService.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.exe
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\obj\Debug\WCFHost.pdb
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.exe
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.pdb
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\WCFHost.exe
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\WCFHost.pdb
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\WcfService.dll
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\WcfService.pdb
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.csprojResolveAssemblyReference.cache
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\MainWindow.baml
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\MainWindow.g.cs
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\App.g.cs
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost_MarkupCompile.cache
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.g.resources
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.Properties.Resources.resources
+D:\Dropbox\Develop\WCFTest\WCFHost\obj\Debug\WCFHost.csproj.GenerateResource.Cache
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\NLog.dll
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Dropbox\Develop\WCFTest\WCFHost\bin\Debug\NLog.xml
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\NLog.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFHost\bin\Debug\NLog.xml

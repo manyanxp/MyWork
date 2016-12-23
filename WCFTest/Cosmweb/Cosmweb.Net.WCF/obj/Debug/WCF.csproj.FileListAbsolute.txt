@@ -1,0 +1,14 @@
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\Cosmweb.Net.WCF.dll
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\Cosmweb.Net.WCF.pdb
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\WCF.csprojResolveAssemblyReference.cache
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\Cosmweb.Net.WCF.dll
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\Cosmweb.Net.WCF.pdb
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\obj\Debug\WCF.csprojResolveAssemblyReference.cache
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\WcfService.dll
+D:\Development\Visual Studio 2013\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\WcfService.pdb
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\WcfService.dll
+D:\Dropbox\Develop\WCFTest\Cosmweb\Cosmweb.Net.WCF\bin\Debug\WcfService.pdb

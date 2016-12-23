@@ -1,0 +1,8 @@
+D:\Development\Visual Studio 2013\WCFTest\WcfService\bin\Debug\WcfService.dll
+D:\Development\Visual Studio 2013\WCFTest\WcfService\bin\Debug\WcfService.pdb
+D:\Development\Visual Studio 2013\WCFTest\WcfService\obj\Debug\WcfService.dll
+D:\Development\Visual Studio 2013\WCFTest\WcfService\obj\Debug\WcfService.pdb
+D:\Dropbox\Develop\WCFTest\WcfService\bin\Debug\WcfService.dll
+D:\Dropbox\Develop\WCFTest\WcfService\bin\Debug\WcfService.pdb
+D:\Dropbox\Develop\WCFTest\WcfService\obj\Debug\WcfService.dll
+D:\Dropbox\Develop\WCFTest\WcfService\obj\Debug\WcfService.pdb

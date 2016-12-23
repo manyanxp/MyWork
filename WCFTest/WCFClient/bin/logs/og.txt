@@ -1,0 +1,61 @@
+date:2016-12-18 02:47:22.3808  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 02:47:28.7842  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 02:48:10.6628  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 02:58:22.8676  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 02:58:23.8215  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 02:58:40.3574  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 02:59:42.0084  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 12:10:49.7678  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 12:22:48.6438  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 12:22:55.7750  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 13:41:06.9748  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 13:41:11.5534  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 13:51:59.0198  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 13:52:00.3019  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 13:53:16.3927  level:INFO message:Created
+date:2016-12-18 13:53:16.6267  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 13:53:19.4369  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 13:53:40.3439  level:INFO message:Closed
+date:2016-12-18 14:43:22.5098  level:INFO message:Created
+date:2016-12-18 14:43:23.7873  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 14:43:57.3949  level:INFO message:Created
+date:2016-12-18 14:43:57.5238  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 14:43:59.7809  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 14:44:06.3593  level:INFO message:Closed
+date:2016-12-18 14:45:32.2135  level:INFO message:Created
+date:2016-12-18 14:45:32.3395  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 14:46:48.3749  level:INFO message:Created
+date:2016-12-18 14:46:48.4889  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 14:49:52.2750  level:INFO message:Created
+date:2016-12-18 14:49:52.3990  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 14:50:54.7170  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 14:51:10.9430  level:INFO message:Created
+date:2016-12-18 14:51:11.0590  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 14:52:20.7510  level:INFO message:Created
+date:2016-12-18 14:52:20.8650  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 15:04:45.9499  level:INFO message:Created
+date:2016-12-18 15:04:46.0767  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:07:20.2017  level:INFO message:Created
+date:2016-12-18 16:07:20.3237  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:07:54.2983  level:INFO message:Created
+date:2016-12-18 16:07:54.4153  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:15:30.6408  level:INFO message:Created
+date:2016-12-18 16:15:30.7656  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:16:50.2865  level:INFO message:WCF Serverと接続が異常となりました.
+date:2016-12-18 16:18:22.5371  level:INFO message:Created
+date:2016-12-18 16:18:22.6463  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:20:59.6091  level:INFO message:Created
+date:2016-12-18 16:20:59.7339  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:21:37.7069  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 16:33:22.7452  level:INFO message:Created
+date:2016-12-18 16:33:22.8544  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:33:39.4569  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 16:46:48.8751  level:INFO message:Created
+date:2016-12-18 16:46:48.9999  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:48:57.0826  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 16:51:52.8842  level:INFO message:Created
+date:2016-12-18 16:51:52.9934  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:51:53.9948  level:INFO message:WCF Serverとの接続がクローズしました.
+date:2016-12-18 16:56:30.5799  level:INFO message:Created
+date:2016-12-18 16:56:30.6891  level:INFO message:WCF Serverと接続をオープンしました.
+date:2016-12-18 16:56:50.8059  level:INFO message:WCF Serverとの接続がクローズしました.

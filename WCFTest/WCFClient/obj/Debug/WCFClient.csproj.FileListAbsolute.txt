@@ -1,0 +1,36 @@
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.csprojResolveAssemblyReference.cache
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\MainWindow.baml
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\MainWindow.g.cs
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\App.g.cs
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient_MarkupCompile.cache
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.g.resources
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.Properties.Resources.resources
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\WCFClient.exe
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\WCFClient.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\WcfService.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.exe
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\obj\Debug\WCFClient.pdb
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.exe
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.pdb
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.csprojResolveAssemblyReference.cache
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\MainWindow.baml
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\MainWindow.g.cs
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\App.g.cs
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient_MarkupCompile.cache
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.g.resources
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.Properties.Resources.resources
+D:\Dropbox\Develop\WCFTest\WCFClient\obj\Debug\WCFClient.csproj.GenerateResource.Cache
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\WCFClient.exe
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\WCFClient.pdb
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\Cosmweb.Net.WCF.dll
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\WcfService.dll
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\Cosmweb.Net.WCF.pdb
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\WcfService.pdb
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\WcfService.pdb
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\NLog.dll
+D:\Dropbox\Develop\WCFTest\WCFClient\bin\Debug\NLog.xml
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\NLog.dll
+D:\Development\Visual Studio 2013\WCFTest\WCFClient\bin\Debug\NLog.xml
