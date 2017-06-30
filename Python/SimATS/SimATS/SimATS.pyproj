@@ -28,6 +28,17 @@
     <Compile Include="packet\common_header.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="packet\sevice_info_request_packet.py" />
+    <Compile Include="packet\day_change_packet.py" />
+    <Compile Include="packet\alarm_status_request_packet.py" />
+    <Compile Include="packet\drr_wakeup_finish_packet.py" />
+    <Compile Include="packet\report_output_requeset_packet.py" />
+    <Compile Include="packet\alarm_list_info_packet.py" />
+    <Compile Include="packet\log_compress_finish_packet.py" />
+    <Compile Include="packet\schedule_info_request_packet.py" />
+    <Compile Include="packet\drr_wakeup_packet.py" />
+    <Compile Include="packet\triptime_packet.py" />
+    <Compile Include="packet\statics_data_packet.py" />
     <Compile Include="packet\health_packet.py">
       <SubType>Code</SubType>
     </Compile>

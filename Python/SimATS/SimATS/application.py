@@ -22,11 +22,11 @@ class TcpServer:
 
     # Accept
     def accept(self):
-            client,addr = self.__server.accept()
-            print('[*] Accepted connectoin from: %s:%d' % (addr[0],addr[1]))
-            client_handler = threading.Thread(target=handle_client,args=(client,))
-            client_handler.daemon = True
-            client_handler.start()
+        client,addr = self.__server.accept()
+        print('[*] Accepted connectoin from: %s:%d' % (addr[0],addr[1]))
+        client_handler = threading.Thread(target=self.handle_client,args=(client,))
+        client_handler.daemon = True
+        client_handler.start()
 
     def handle_client(client_socket):
 
@@ -65,6 +65,7 @@ class MessageWorkder(TcpServer):
         #print(t.data_detail)
         pass
 
+# アプリケーションメイン
 class App:
     _instance = None
     def __init__(self):
