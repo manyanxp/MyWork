@@ -10,8 +10,8 @@
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Analize</Name>
-    <RootNamespace>Analize</RootNamespace>
+    <Name>extract</Name>
+    <RootNamespace>extract</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -26,9 +26,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="extract_recording_item.py" />
-    <Compile Include="stopwatch.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="tool_main.py">
       <SubType>Code</SubType>
     </Compile>

@@ -1,9 +1,17 @@
 ﻿# -*- utf-8 -*-
+#-----------------------------------------------------------------------------
+# 自作ライブラリパス追加
+import sys,os
+print(os.path.dirname(os.path.abspath(__file__)) + '/../mylibpy')
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../mylibpy')
+#-----------------------------------------------------------------------------
 
 import xlrd
 import os.path
 import xls_io
-import stopwatch
+from diagnostics import stopwatch
+
+#-----------------------------------------------------------------------------
 
 # アイテムコード
 class ItemCode():
