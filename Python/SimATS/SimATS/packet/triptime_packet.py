@@ -40,7 +40,6 @@ class TripTimePacket(LittleEndianStructure):
         ('rtt', c_ushort),
         ('reserve5', c_byte),
         ('reserve6', c_byte),
-        
         ]
 
 
