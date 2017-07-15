@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{74872043-936d-445b-952a-ad44d3a36f76}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>diagnostics\stopwatch.py</StartupFile>
+    <StartupFile>socket\tcp_server.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -23,10 +23,23 @@
   <ItemGroup>
     <Compile Include="diagnostics\stopwatch.py" />
     <Compile Include="diagnostics\__init__.py" />
+    <Compile Include="socket\tcp_client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="socket\tcp_server.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="socket\__init__.py" />
+    <Compile Include="threading\Timer\repeated_timer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="diagnostics\" />
+    <Folder Include="socket\" />
+    <Folder Include="threading\" />
+    <Folder Include="threading\Timer\" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />

@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="actions\data_controller.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="application.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="communication\tcp_manager.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="packet\common_header.py">
@@ -42,9 +48,15 @@
     <Compile Include="packet\health_packet.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="resource\defines.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SimATS.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="actions\" />
+    <Folder Include="communication\" />
+    <Folder Include="resource\" />
     <Folder Include="packet\" />
   </ItemGroup>
   <PropertyGroup>

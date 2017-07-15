@@ -1,0 +1,4 @@
+# -*- utf-8 -*-
+
+HEALTH_INTERVAL = 3
+HEALTH_TIMOUT_TIME = 30
