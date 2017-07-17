@@ -1,9 +1,12 @@
 #-*- coding: utf-8 -*-
 
-from common_header import AppHeaderPacket
-from common_header import CommonHeaderPacket
+import io
+from .common_header import IdentificationUnit
+from .common_header import AppHeaderPacket
+from .common_header import CommonHeaderPacket
 from ctypes import LittleEndianStructure
 from ctypes import c_byte
+from ctypes import sizeof
 
 # Health Infomation Form ATS
 class HealthInfomationPacketFromATS(LittleEndianStructure):
@@ -12,6 +15,17 @@ class HealthInfomationPacketFromATS(LittleEndianStructure):
         ('app_header', AppHeaderPacket),
         ('common_header', CommonHeaderPacket),
         ('data_detail', c_byte * 128)]
+
+    def to_struct(self, binary):
+        buffer = io.BytesIO(message)
+        packet = HealthInfomationPacketFromATS()
+        buffer.readinto(packet)
+        return packet
+
+    def to_binary(self, structure):
+        buffer = io.BytesIO()
+        buffer.write(structure)
+        return buffer.getvalue()
 
 
 # Health Infomation To ATS
@@ -32,6 +46,15 @@ class HealthInfomationPacketToATS(LittleEndianStructure):
         ('version', c_byte * 8)
         ]
 
+    def to_struct(self, binary):
+        buffer = io.BytesIO(binary)
+        packet = HealthInfomationPacketToATS()
+        buffer.readinto(packet)
+        return packet
 
-
-
+    def to_binary(self):
+        buffer = io.BytesIO()
+        self.app_header.identification_unit.data_size = sizeof(HealthInfomationPacketToATS) - sizeof(IdentificationUnit)
+        self.app_header.identification_unit.data_id  = ~self.app_header.identification_unit.data_size
+        buffer.write(self)
+        return buffer.getvalue()

@@ -7,6 +7,7 @@ import time
 import threading
 import asyncio
 from threading import Lock
+from concurrent.futures import ThreadPoolExecutor
 #-----------------------------------------------------------------------------
 class TcpServer:
     def __init__(self):
@@ -47,16 +48,16 @@ class TcpServer:
             if self._connected is not None:
                 self._connected((client,addr))
     
-    async def _begin_accept_async(self, loop):
+    def _begin_accept_async(self):
         """非同期による接続要求待ち（本体）"""
         while True:
             self.accept() 
 
     def begin_accept_async(self):
         """非同期による接続要求待ち"""
-        loop = asyncio.get_event_loop()
-        asyncio.ensure_future(self._begin_accept_async(loop))
-        loop.run_forever()
+        accept_handler = threading.Thread(target=self._begin_accept_async,)
+        accept_handler.daemon = True
+        accept_handler.start()
 
     def remove_conection(self, con, addr):
         """クライアントと接続を切る"""
@@ -81,33 +82,31 @@ class TcpServer:
 
     def handle_client(self, con, addr):
         """クライアントハンドル"""
-
-        while True:
-            bufsize=1024
-            try:
-                recv_data = con.recv(bufsize)
-            except ConnectionResetError:
-                self.remove_conection(con, addr)
-                if self._discooneted is not None:
-                    self._discooneted(addr)
-                break
-            else:
-                if not recv_data:
+        with ThreadPoolExecutor(max_workers = 128) as tpool:
+            while True:
+                bufsize=1024
+                try:
+                    recv_data = con.recv(bufsize)
+                except ConnectionResetError:
                     self.remove_conection(con, addr)
                     if self._discooneted is not None:
                         self._discooneted(addr)
                     break
                 else:
-                    loop = asyncio.get_event_loop()
-                    asyncio.ensure_future(self.do_proc_packet_async(con, recv_data))
-                    loop.run_forever()
+                    if not recv_data:
+                        self.remove_conection(con, addr)
+                        if self._discooneted is not None:
+                            self._discooneted(addr)
+                        break
+                    else:
+                        print("Threads: {}".format(len(tpool._threads)))  # スレッド数を表示
+                        tpool.submit(self.do_proc_packet_worker, con, recv_data)
 
-        print('[*] 受信処理終了')
-
-    async def do_proc_packet_async(self, client_scoket, message):
+    def do_proc_packet_worker(self, client_scoket, recvdata):
         """パケットの非同期処理テンプレート"""
         pass
-
+        
+#------------------------------------------------------------------------------
 def disconnected(*arg):
     print(arg[0])
 

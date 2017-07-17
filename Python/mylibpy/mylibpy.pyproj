@@ -33,10 +33,14 @@
     <Compile Include="threading\Timer\repeated_timer.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="util\convert.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="diagnostics\" />
+    <Folder Include="util\" />
     <Folder Include="socket\" />
     <Folder Include="threading\" />
     <Folder Include="threading\Timer\" />

@@ -10,13 +10,25 @@ import socket
 import time
 import threading
 import asyncio
+from ctypes import sizeof
 from mylibpy.socket import tcp_server as ts
-from packet.common_header import IdentificationUnit
+from mylibpy.util import convert
+from packet import common_header as ch
 #-----------------------------------------------------------------------------
+
+class ConnectionInfo():
+    def __init__(self, client_socket, recvdata):
+        self.client_socket = client_socket
+        self.recvdata = recvdata
+        self.app_header = ch.AppHeaderPacket.to_struct(recvdata)
+        buffer = convert.extract_bytes(recvdata, 0, sizeof(ch.AppHeaderPacket))
+        self.common_header = ch.CommonHeaderPacket.to_struct(buffer)
+        
 
 class TcpManager(ts.TcpServer):
     _instance = None
     _callback = None
+    recv_packet_event = None
 
     @classmethod
     def get_instance(cls):
@@ -25,25 +37,14 @@ class TcpManager(ts.TcpServer):
             cls._instance = cls()
             return cls._instance
 
-    def recv_packet_event(self, func):
-        self._callback = func
+    def handler(self, *args):
+        if self.recv_packet_event is not None:
+            self.recv_packet_event(*args)
 
-    async def do_proc_packet_async(self, client_socket, message):
-        """パケットの非同期処理"""
+    def do_proc_packet_worker(self, client_socket, recvdata):
+        """パケットの処理
+           スレッドプールに登録されて起動する。
+        """   
+        coninfo = ConnectionInfo(client_socket, recvdata)
+        self.handler(coninfo)
 
-        buffer = io.BytesIO(message)
-        t = IdentificationUnit()
-        buffer.readinto(t)
-
-        print(t.data_id)
-        print(t.data_size)
-
-        if self._callback is not None:
-            self._callback(t)
-
-        #print(t.app_header.identification_unit.data_id)
-        #print(t.app_header.identification_unit.data_size)
-        #print(t.common_header.device_id)
-        #print(t.common_header.function_code)
-        #print(t.common_header.item_code)
-        #print(t.data_detail)

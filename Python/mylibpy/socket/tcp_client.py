@@ -3,20 +3,30 @@ import sys
 # -*- coding:utf-8 -*-
 import socket
 import asyncio
+from enum import Enum
+from concurrent.futures import ThreadPoolExecutor
+
+class ConnectionStatus(Enum):
+    DISCONNECTED = 0
+    CONNECTED = 1
 
 class TcpClient():
-    def __init__(self, host, port):
-        self.host = host
-        self.port = port
-        self.__client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #オブジェクトの作成をします
+    def __init__(self):
+        self.host = '127.0.0.1'
+        self.port = '50000'
+        self._client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #オブジェクトの作成をします
         self._connected = None
         self._discooneted = None
+        self.status = ConnectionStatus.DISCONNECTED
 
-    def connect(self):
+    def connect(self, host, port):
         """サーバーへ接続"""
+        self.host = host
+        self.port = port
         ret = True
         try:
-            self.__client.connect((self.host, self.port)) #これでサーバーに接続します
+            self._client.connect((self.host, self.port)) #これでサーバーに接続します
+            self.status = ConnectionStatus.CONNECTED
             if self._connected is not None:
                 self._connected((self.host, self.port))
         except ConnectionRefusedError:
@@ -25,11 +35,13 @@ class TcpClient():
         return ret
 
     def close(self):
-        self.close()
+        if self.status is ConnectionStatus.CONNECTED:
+            self._client.close()
 
     def sendto(self, data):
         """パケット送信"""
-        self.__client.send(data) 
+        if self.status is ConnectionStatus.CONNECTED:
+            self._client.send(data) 
 
     def connected_event(self, func):
         """接続ｲﾍﾞﾝﾄ"""
@@ -40,27 +52,31 @@ class TcpClient():
         self._discooneted = func
 
     def recv(self):
-        try:
-            packet = self.__client.recv(4096)
-        except ConnectionResetError:
-            self.__client.close()
-        else:
-            if not recv_data:
-                self.remove_conection(con, addr)
+        with ThreadPoolExecutor(max_workers = 128) as tpool:
+            try:
+                packet = self._client.recv(4096)
+            except ConnectionResetError:
+                self._client.close()
+                self.status = ConnectionStatus.DISCONNECTED
                 if self._discooneted is not None:
                     self._discooneted(addr)
             else:
-                loop = asyncio.get_event_loop()
-                asyncio.ensure_future(self.recv_async(packet, loop))
-                loop.run_forever()
+                if not recv_data:
+                    self.status = ConnectionStatus.DISCONNECTED
+                    if self._discooneted is not None:
+                        self._discooneted(addr)
+                else:
+                    tbool.submit(self.do_proc_packet_worker, recv_data)
 
-    async def recv_async(self, recvdata):
+    def do_proc_packet_worker(self, recvdata):
+        """受信処理用のテンプレート"""
         pass
  
 if __name__ == '__main__':
     import time
-
-    client = TcpClient('127.0.0.1', 50001)
-    if client.connect() is not False:    
-        client.sendto("tetestset")
+    import struct
+    client = TcpClient()
+    if client.connect('127.0.0.1', 50001) is not False:    
+        data = struct.pack('16s', 'Hello, World!'.encode('ascii'))
+        client.sendto(data)
         client.close()
