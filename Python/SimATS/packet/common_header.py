@@ -1,5 +1,5 @@
 #-*- coding: utf-8 -*-
-
+import io
 from ctypes import LittleEndianStructure
 from ctypes import c_uint32
 from ctypes import c_ushort
@@ -43,6 +43,11 @@ class IdentificationUnit(LittleEndianStructure):
         ('data_id', c_uint32),
         ('data_size', c_uint32)]
 
+    def to_struct(self, binary):
+        buffer = io.BytesIO(binary)
+        packet = IdentificationUnit()
+        buffer.readinto(packet)
+        return packet
 
 # アプリケーションヘッダー
 class AppHeaderPacket(LittleEndianStructure):
@@ -65,6 +70,12 @@ class AppHeaderPacket(LittleEndianStructure):
         ('reserve3', c_byte),
         ('reserve4', c_byte)]
 
+    @classmethod
+    def to_struct(cls, binary):
+        buffer = io.BytesIO(binary)
+        packet = AppHeaderPacket()
+        buffer.readinto(packet)
+        return packet
 
 # 共通ヘッダー
 class CommonHeaderPacket(LittleEndianStructure):
@@ -74,4 +85,11 @@ class CommonHeaderPacket(LittleEndianStructure):
         ('function_code', c_byte),
         ('item_code', c_byte),
         ('anser_code', c_byte)]
+
+    @classmethod
+    def to_struct(cls, binary):
+        buffer = io.BytesIO(binary)
+        packet = CommonHeaderPacket()
+        buffer.readinto(packet)
+        return packet
 

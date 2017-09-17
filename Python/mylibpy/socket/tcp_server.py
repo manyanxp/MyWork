@@ -7,14 +7,18 @@ import time
 import threading
 import asyncio
 from threading import Lock
+from concurrent.futures import ThreadPoolExecutor
 #-----------------------------------------------------------------------------
 class TcpServer:
     def __init__(self):
         """通信ソケットの作成"""
         self.clients = []
         self.bindip = "0.0.0.0"
-        self.bindport = 500000
-        self.lock = Lock()
+        self.bindport = 50000
+        self._lock = Lock()
+
+        self._connected = None
+        self._discooneted = None
 
     def bind(self, bindip, bindport):
         """ソケット作成"""
@@ -36,58 +40,86 @@ class TcpServer:
         client,addr = self.__server.accept()
         print('[*]Accepted connectoin from: %s:%d' % (addr[0],addr[1]))
 
-        with self.lock:
+        with self._lock:
             self.clients.append((client, addr))
             client_handler = threading.Thread(target=self.handle_client,args=(client,addr),)
             client_handler.daemon = True
             client_handler.start()
-
-    async def begin_accept_async(self):
-        """非同期による接続要求待ち"""
+            if self._connected is not None:
+                self._connected((client,addr))
+    
+    def _begin_accept_async(self):
+        """非同期による接続要求待ち（本体）"""
         while True:
             self.accept() 
-        return True
+
+    def begin_accept_async(self):
+        """非同期による接続要求待ち"""
+        accept_handler = threading.Thread(target=self._begin_accept_async,)
+        accept_handler.daemon = True
+        accept_handler.start()
 
     def remove_conection(self, con, addr):
         """クライアントと接続を切る"""
         print('切断{}'.format(addr))
-        with self.lock:
+        with self._lock:
             con.close()
             self.clients.remove((con, addr))
 
     def send_packet(self, messege):
         """クライアントへのパケット送信"""
-        with self.lock:
+        with self._lock:
             for c in self.clients:
                 c[0].sendto(message, c[1])
 
+    def connected_event(self, func):
+        """接続ｲﾍﾞﾝﾄ"""
+        self._connected = func
+
+    def disconnected_event(self, func):
+        """切断ｲﾍﾞﾝﾄ"""
+        self._discooneted = func
+
     def handle_client(self, con, addr):
         """クライアントハンドル"""
-
-        while True:
-            bufsize=1024
-            try:
-                recv_data = con.recv(bufsize)
-            except ConnectionResetError:
-                self.remove_conection(con, addr)
-                break
-            else:
-                if not recv_data:
+        with ThreadPoolExecutor(max_workers = 128) as tpool:
+            while True:
+                bufsize=1024
+                try:
+                    recv_data = con.recv(bufsize)
+                except ConnectionResetError:
                     self.remove_conection(con, addr)
+                    if self._discooneted is not None:
+                        self._discooneted(addr)
                     break
                 else:
-                    asyncio.ensure_future(self.do_proc_packet_async(con, recv_data))
+                    if not recv_data:
+                        self.remove_conection(con, addr)
+                        if self._discooneted is not None:
+                            self._discooneted(addr)
+                        break
+                    else:
+                        print("Threads: {}".format(len(tpool._threads)))  # スレッド数を表示
+                        tpool.submit(self.do_proc_packet_worker, con, recv_data)
 
-        print('受信処理終了')
-
-    async def do_proc_packet_async(self, client_scoket, message):
+    def do_proc_packet_worker(self, client_scoket, recvdata):
         """パケットの非同期処理テンプレート"""
         pass
-
+        
+#------------------------------------------------------------------------------
+def disconnected(*arg):
+    print(arg[0])
 
 if __name__ == '__main__':
     server = TcpServer()
-    server.bind('0.0.0.0', 50000)
+    server.bind('0.0.0.0', 50001)
     server.listen(10)
-    asyncio.ensure_future(server.begin_accept_async())
+    #server.accept()
+    server.disconnected_event(disconnected)
+    server.begin_accept_async()
+
+
+    while True:
+        time.sleep(3)
+
 
