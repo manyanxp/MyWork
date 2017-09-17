@@ -16,14 +16,14 @@ class WeatherInfomationKind(Enum):
 class WeatherInfomation:
     date = None
     kind = 0
-    atom = None
-    def __init__(self, date, kind, atom):
+    model = None
+    def __init__(self, date, kind, model):
         self.date = date
         self.kind = kind
-        self.atom = atom
+        self.model = model
 #endregion
 
-#region Type is WeatherStatoin Class
+#region WeatherStatoin Class
 class Weatherstation(DatabaseBase):
     # コレクション名
     _collectionname = ""
@@ -47,8 +47,8 @@ class Weatherstation(DatabaseBase):
             return
 
         col = self._collection
-        col.insert_one({'Kind':info.kind, 'Temperature':info.atom.Temperature})
-        print("Insert => %s" % info.atom.ToString())
+        col.insert_one({'Kind':info.kind, 'Temperature':info.model.Temperature(), "Pressure": info.model.Pressure(), "Altitude": info.model.Altitude(), "SealevelPressure": info.model.SealevelPressure()})
+        print("Insert => %s" % info.model.ToString())
 
     # Select weather infomation by startdate and enddate
     def Select(self, startdate, enddate):
@@ -57,7 +57,7 @@ class Weatherstation(DatabaseBase):
             return
 
         col = self._collection
-        for data in col.find({u'Temperature':1.0}):
+        for data in col.find():
             print (data)
 
     def Test(self):
@@ -68,10 +68,10 @@ class Weatherstation(DatabaseBase):
         print (col.find_one())
 
         print ("=====find=====")
-        for data in col.find():
+        for data in col.find({},{u'Temperature': 1, '_id': 0}):
             print (data)
 
         print ("=====find_query=====")
-        for data in col.find({u'a':10}):
+        for data in col.find({u'x':10}):
             print (data)
 #endregion
