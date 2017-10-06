@@ -28,6 +28,7 @@ class App:
 
 	# 実行部
     def run(self):
+        """処理実行部"""
         station = Weatherstation('192.168.1.201', 27017, 'weatherstation', 'AtmosphericInformation')
         #station.Test()
         model = AtmosphericInformationModel()

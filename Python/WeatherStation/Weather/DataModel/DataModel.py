@@ -3,39 +3,39 @@
 import Adafruit_BMP.BMP085 as BMP085
 
 #region Type is AtmosphericInformationModel
-class AtmosphericInformationModel:
+class AtmosphericInformationModel(IAtomsphericInfomationModel):
     '''大気情報モデル'''
     def __init__(self):
-        self._sensor = BMP085.BMP085()
+        self.__sensor = BMP085.BMP085()
 
         # 気温
-        self._temperature = 0.0
+        self.__temperature = 0.0
         # 気圧
-        self._pressure = 0.0
+        self.__pressure = 0.0
         # 高度
-        self._altitude = 0.0
+        self.__altitude = 0.0
         # 海面気圧
-        self._sealevel_pressure = 0.0
+        self.__sealevel_pressure = 0.0
 
     def Temperature(self):
-        '''気温'''
-        self._temperature = self._sensor.read_temperature()
-        return self._temperature
+        """気温"""
+        self.__temperature = self.__sensor.read_temperature()
+        return self.__temperature
 
     def Pressure(self):
-        '''気圧(未補正)'''
-        self._pressure = self._sensor.read_pressure()
-        return self._pressure
+        """気圧(未補正)"""
+        self.__pressure = self.__sensor.read_pressure()
+        return self.__pressure
 
     def Altitude(self):
-        '''高度'''
-        self._altitude = self._sensor.read_altitude()
-        return self._altitude
+        """高度"""
+        self.__altitude = self.__sensor.read_altitude()
+        return self.__altitude
 
     def SealevelPressure(self):
-        '''海面気圧'''
-        self._sealevel_pressure = self._sensor.read_sealevel_pressure()
-        return self._sealevel_pressure
+        """海面気圧"""
+        self.__sealevel_pressure = self.__sensor.read_sealevel_pressure()
+        return self.__sealevel_pressure
 
     def ToString(self):
         return "Temperature:%f Pressure: %f Altitude: %f SeaLevel Pressure: %f" % (self.Temperature(), self.Pressure(), self.Altitude(), self.SealevelPressure())

@@ -14,6 +14,7 @@ class WeatherInfomationKind(Enum):
 
 #region Type if WeatherInfomation
 class WeatherInfomation:
+    """気象情報"""
     date = None
     kind = 0
     model = None
@@ -25,6 +26,11 @@ class WeatherInfomation:
 
 #region WeatherStatoin Class
 class Weatherstation(DatabaseBase):
+    """
+    気象観測部
+    ここで、データベースクラスを継承すべきか？
+       
+    """
     # コレクション名
     _collectionname = ""
     # コレクション
@@ -42,6 +48,7 @@ class Weatherstation(DatabaseBase):
 
     # Insert wather infomation
     def Insert(self, info):
+        """気象情報の登録"""
         if self.IsConnected == False:
             print("Not Connected.")
             return
@@ -52,6 +59,7 @@ class Weatherstation(DatabaseBase):
 
     # Select weather infomation by startdate and enddate
     def Select(self, startdate, enddate):
+        """気象情報の抽出"""
         if self.IsConnected == False:
             print("Not Connected.")
             return
