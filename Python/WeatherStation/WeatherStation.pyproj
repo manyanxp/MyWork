@@ -24,6 +24,9 @@
     </Compile>
     <Compile Include="Database\DatabaseBase.py" />
     <Compile Include="Database\__init__.py" />
+    <Compile Include="Util\DesignePattern\singlton.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Weather\DataModel\DataModel.py" />
     <Compile Include="Weather\TestModel\test_atom_info.py">
       <SubType>Code</SubType>
@@ -38,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database" />
+    <Folder Include="Util\" />
+    <Folder Include="Util\DesignePattern\" />
     <Folder Include="Weather" />
     <Folder Include="Weather\DataModel\" />
     <Folder Include="Weather\TestModel\" />

@@ -1,4 +1,4 @@
-# -*- conding:utf-8 -*-
+﻿# -*- conding:utf-8 -*-
 from datetime import date
 from Database.DatabaseBase import DatabaseBase
 from . import DataModel
@@ -66,7 +66,7 @@ class Weatherstation(DatabaseBase):
 
         col = self._collection
         for data in col.find():
-            print (data)
+            print (data['Temperature'])
 
     def Test(self):
         col = self._collection
