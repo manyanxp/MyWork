@@ -5,7 +5,7 @@ import threading
 import asyncio
 from threading import Lock
 from concurrent.futures import ThreadPoolExecutor
-
+   
 class Event():
     __pool = ThreadPoolExecutor(max_workers = 128)
     def __init__(self):
@@ -19,7 +19,7 @@ class Event():
         except:
             print("異常")
 
-    def test(self):
+    def run(self):
        self.handler([1,1])
 
 def func(*args, **keyags):
@@ -28,5 +28,6 @@ def func(*args, **keyags):
 if __name__ == '__main__':
     e = Event()
     e.event = func
-    event.test()
+    e.run()
+
     pass
